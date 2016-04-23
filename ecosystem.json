@@ -1,0 +1,24 @@
+{
+	"apps": [
+		{
+			"name": "xoso",
+			"script": "server.js",
+			"exec_mode": "cluster",
+			"instances": "max",
+			"env_production": {
+				"NODE_ENV": "production"
+			}
+		}
+	],
+	"deploy": {
+		"production": {
+			"user": "semaphoreci",
+			"host": "159.203.89.166",
+			"ref": "origin/master",
+			"repo": "git@github.com:andrunix/xoso.git",
+			"path": "/var/www/production",
+			"post-deploy": "npm i && pm2 startOrGracefulReload ecosystem.json --env production",
+			"forward-agent": "yes"
+		}
+	}
+}
