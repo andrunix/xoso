@@ -3,14 +3,23 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 
-server.connection({
-  host: '127.0.0.1',
-  port: 8000
-});
+server.connection({ port: 8000 });
 
+const aboutHandler = function (request, reply) {
+	reply.view('about', {});
+};
 
-server.register(require('inert'), (err) => {
+server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
+
+
+	server.views({
+		engines: { pug: require('pug') },
+		path: __dirname + '/templates',
+		compileOptions: {
+			pretty: true
+		}
+	});
 
   server.route({
     method: 'GET',
@@ -28,8 +37,8 @@ server.register(require('inert'), (err) => {
     }
   });
 
+	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
 });
-
 
 
 server.start((err) => {
