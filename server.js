@@ -5,6 +5,10 @@ const server = new Hapi.Server();
 
 server.connection({ port: 8000 });
 
+const rootHandler = function(request, reply) {
+	reply.view('index', {} );
+};
+
 const aboutHandler = function (request, reply) {
 	reply.view('about', {});
 };
@@ -21,13 +25,15 @@ server.register([require('inert'), require('vision')], (err) => {
 		}
 	});
 
+	/*
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/old_index',
     handler: function(request, reply) {
       reply.file(__dirname + '/public/index.html');
     }
   });
+	*/
 
   server.route({
     method: 'GET',
@@ -37,6 +43,7 @@ server.register([require('inert'), require('vision')], (err) => {
     }
   });
 
+	server.route({ method: 'GET', path: '/',      handler: rootHandler });
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
 });
 
