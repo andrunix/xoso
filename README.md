@@ -14,3 +14,9 @@ Setup according to this fantastic blog article:
 http://niftylettuce.com/posts/automated-node-app-ci-graceful-zerodowntime-github-pm2/
 
 
+# TODO
+
+* Organize all my assets and use a build tool
+
+
+
