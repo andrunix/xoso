@@ -1,12 +1,14 @@
 {
   "name": "xoso",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "xoso web site",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"production": "webpack -p",
+		"start": "webpack-dev-server"
   },
   "author": "Andrew M. Pierce",
+	"repository": "https://github.com/andrunix/xoso.git",
   "license": "ISC",
   "dependencies": {
     "boom": "^3.1.2",
@@ -16,6 +18,16 @@
     "inert": "^3.2.0",
     "items": "^2.0.0",
     "pug": "^2.0.0-alpha6",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
     "vision": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.7",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.16.0",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
