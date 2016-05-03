@@ -1,4 +1,7 @@
+[![Build Status](https://semaphoreci.com/api/v1/andrunix/xoso/branches/master/badge.svg)](https://semaphoreci.com/andrunix/xoso)
+
 # xoso
+
 
 My new website! Not much here yet but it is using:
 
