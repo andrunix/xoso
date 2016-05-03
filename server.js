@@ -16,7 +16,6 @@ const aboutHandler = function (request, reply) {
 server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
 
-
 	server.views({
 		engines: { pug: require('pug') },
 		path: __dirname + '/templates',
@@ -25,6 +24,7 @@ server.register([require('inert'), require('vision')], (err) => {
 		}
 	});
 
+	/*
   server.route({
     method: 'GET',
     path: '/{param*}',
@@ -32,9 +32,11 @@ server.register([require('inert'), require('vision')], (err) => {
       directory: { path: __dirname + '/public' }
     }
   });
+	*/
 
 	server.route({ method: 'GET', path: '/',      handler: rootHandler });
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
+	server.route({ method: 'GET', path: '/{param*}', handler: directory: { path: __/dirname + '/public' } });
 });
 
 
