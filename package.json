@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
 		"production": "webpack -p",
-		"start": "webpack-dev-server"
+		"start": "webpack-dev-server --port 4000"
   },
   "author": "Andrew M. Pierce",
 	"repository": "https://github.com/andrunix/xoso.git",
