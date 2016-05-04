@@ -7,7 +7,7 @@ server.connection({ port: 8000 });
 
 const rootHandler = function(request, reply) {
 	// reply.file(__dirname + '/dist/index.html');
-	reply.file(__dirname + '/public/index.html');
+	reply.file(__dirname + '/dist/index.html');
 };
 
 const aboutHandler = function (request, reply) {
