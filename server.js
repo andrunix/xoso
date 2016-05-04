@@ -37,7 +37,7 @@ server.register([require('inert'), require('vision')], (err) => {
 
 	server.route({ method: 'GET', path: '/',      handler: rootHandler });
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
-	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } });
+	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/dist' } } });
 });
 
 
