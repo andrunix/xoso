@@ -30,10 +30,8 @@ server.register([require('inert'), require('vision')], (err) => {
 	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/dist' } } });
 });
 
-
 server.start((err) => {
   if (err)
     throw(err);
-
   console.log('Server running at: ' + server.info.uri);
 });
