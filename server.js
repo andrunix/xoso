@@ -6,8 +6,8 @@ const server = new Hapi.Server();
 server.connection({ port: 8000 });
 
 const rootHandler = function(request, reply) {
-	// reply.file(__dirname + '/dist/index.html');
-	reply.file(__dirname + '/dist/index.html');
+  // reply.file(__dirname + '/dist/index.html');
+	reply.view('index', {} );
 };
 
 const aboutHandler = function (request, reply) {
@@ -24,16 +24,6 @@ server.register([require('inert'), require('vision')], (err) => {
 			pretty: true
 		}
 	});
-
-	/*
-  server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-      directory: { path: __dirname + '/public' }
-    }
-  });
-	*/
 
 	server.route({ method: 'GET', path: '/',      handler: rootHandler });
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
