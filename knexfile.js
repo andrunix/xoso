@@ -1,4 +1,3 @@
-/*
 module.exports = {
   test: {
     client: 'pg',
@@ -12,7 +11,7 @@ module.exports = {
   },
   development: {
    client: 'pg',
-   connection: 'posgres://localhost/xoso_development',
+   connection: 'postgres://localhost/xoso_development',
    migrations: {
      directory: __diranme + '/db/migrations'
    },
@@ -31,5 +30,5 @@ module.exports = {
     }
   }
 };
-*/
+
 

@@ -28,6 +28,7 @@ http://niftylettuce.com/posts/automated-node-app-ci-graceful-zerodowntime-github
 
 * Organize all my assets and use a build tool
 * Schedule jobs with: https://github.com/rschmukler/agenda
-*
+* Use InstantClick: http://instantclick.io/
+
 
 
