@@ -2,7 +2,6 @@
 
 # xoso
 
-
 * hapijs: http://hapijs.com/
 * nunjucks: https://mozilla.github.io/nunjucks/
 * sempaphoreci: https://semaphoreci.com
