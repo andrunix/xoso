@@ -3,11 +3,12 @@
 # xoso
 
 
-My new website! Not much here yet but it is using:
-
 * hapijs: http://hapijs.com/
-* pug: https://github.com/pugjs/pug
+* nunjucks: https://mozilla.github.io/nunjucks/
 * sempaphoreci: https://semaphoreci.com
+* knex: http://knexjs.org/
+* bookshelf: http://bookshelfjs.org/
+* postgresql: http://www.postgresql.org/
 
 
 # Deployment
@@ -16,10 +17,13 @@ Setup according to this fantastic blog article:
 
 http://niftylettuce.com/posts/automated-node-app-ci-graceful-zerodowntime-github-pm2/
 
+# TDD with Node, Postgres and Knex
+http://mherman.org/blog/2016/04/28/test-driven-development-with-node
 
 # TODO
 
 * Organize all my assets and use a build tool
-
+* Schedule jobs with: https://github.com/rschmukler/agenda
+*
 
 

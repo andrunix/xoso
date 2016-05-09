@@ -11,14 +11,17 @@
   "repository": "https://github.com/andrunix/xoso.git",
   "license": "ISC",
   "dependencies": {
+    "bookshelf": "^0.9.4",
     "boom": "^3.1.2",
     "bootstrap": "^3.3.6",
     "hapi": "^13.0.0",
     "hoek": "^4.0.0",
     "inert": "^3.2.0",
     "items": "^2.0.0",
+    "knex": "^0.11.0",
     "nunjucks": "^2.4.2",
     "nunjucks-hapi": "^2.1.0",
+    "pg": "^4.5.5",
     "pug": "^2.0.0-alpha6",
     "vision": "^4.1.0"
   },
