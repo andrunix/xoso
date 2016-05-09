@@ -1,3 +1,4 @@
+/*
 module.exports = {
   test: {
     client: 'pg',
@@ -30,4 +31,5 @@ module.exports = {
     }
   }
 };
+*/
 
