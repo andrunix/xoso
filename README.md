@@ -18,7 +18,11 @@ Setup according to this fantastic blog article:
 http://niftylettuce.com/posts/automated-node-app-ci-graceful-zerodowntime-github-pm2/
 
 # TDD with Node, Postgres and Knex
-http://mherman.org/blog/2016/04/28/test-driven-development-with-node
+* http://mherman.org/blog/2016/04/28/test-driven-development-with-node
+
+# Setup
+* Postgres on Digital Ocean - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04
+
 
 # TODO
 

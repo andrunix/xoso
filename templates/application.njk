@@ -3,32 +3,32 @@
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   </head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        {% block header %}
-        <img src="images/xoso-logo-1.png">
-        <h1>{{ title }}</h1>
-        {% endblock %}
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          {% block header %}
+          <img src="images/xoso-logo-1.png">
+          <h1>{{ title }}</h1>
+          {% endblock %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <section class="left">
+          {% block left %}
+          menu
+          {% endblock %}
+          </section>
+
+          <section class="right">
+          {% block right %}
+          {% endblock %}
+          </section>
+        </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <section class="left">
-        {% block left %}
-        menu
-        {% endblock %}
-        </section>
-
-        <section class="right">
-        {% block right %}
-        {% endblock %}
-        </section>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
 
