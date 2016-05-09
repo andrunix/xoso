@@ -1,9 +1,11 @@
 'use strict';
-
+const dotenv = require('dotenv');
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 const NunjucksHapi = require('nunjucks-hapi');
 const Path = require('path');
+
+dotenv.load();
 
 server.connection({ port: 8000 });
 

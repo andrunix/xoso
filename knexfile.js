@@ -11,7 +11,7 @@ module.exports = {
   },
   development: {
    client: 'pg',
-   connection: 'postgres://localhost/xoso_development',
+   connection: process.env.DATABASE_URL,
    migrations: {
      directory: __diranme + '/db/migrations'
    },
