@@ -17,6 +17,8 @@
     "hoek": "^4.0.0",
     "inert": "^3.2.0",
     "items": "^2.0.0",
+    "nunjucks": "^2.4.2",
+    "nunjucks-hapi": "^2.1.0",
     "pug": "^2.0.0-alpha6",
     "vision": "^4.1.0"
   },
