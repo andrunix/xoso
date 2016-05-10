@@ -17,7 +17,7 @@
 			"ref": "origin/master",
 			"repo": "git@github.com:andrunix/xoso.git",
 			"path": "/var/www/production",
-			"post-deploy": "npm i && cd /var/www/production/current && npm-exec knex migrate:latest --env production && pm2 startOrGracefulReload ecosystem.json --env production",
+			"post-deploy": "npm i && cd /var/www/production/current && $(npm bin)/knex migrate:latest --env production && pm2 startOrGracefulReload ecosystem.json --env production",
 			"forward-agent": "yes"
 		}
 	}
