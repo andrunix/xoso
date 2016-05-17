@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.load();
+
 module.exports = {
   test: {
     client: 'pg',
@@ -10,9 +13,13 @@ module.exports = {
     }
   },
   development: {
-   client: 'pg',
-   // connection: process.env.DATABASE_URL,
-   connection: 'postgres://localhost/xoso_development',
+   client: 'mysql',
+   connection: {
+     host: '127.0.0.1',
+     user: process.env.DB_USER,
+     password: process.env.DB_PASSWORD,
+     database: process.env.DB
+   },
    migrations: {
      directory: __dirname + '/db/migrations'
    },
