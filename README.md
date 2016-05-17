@@ -7,7 +7,8 @@
 * sempaphoreci: https://semaphoreci.com
 * knex: http://knexjs.org/
 * bookshelf: http://bookshelfjs.org/
-* postgresql: http://www.postgresql.org/
+* ~~postgresql: http://www.postgresql.org/~~
+* mysql
 
 
 # Deployment
