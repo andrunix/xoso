@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "production": "webpack -p",
-    "start": "webpack-dev-server --port 4000"
+    "start": "nodemon server"
   },
   "author": "Andrew M. Pierce",
   "repository": "https://github.com/andrunix/xoso.git",
   "license": "ISC",
   "dependencies": {
+    "bookshelf": "^0.9.5",
     "boom": "^3.1.2",
     "bootstrap": "^3.3.6",
     "dotenv": "^2.0.0",
@@ -33,6 +34,7 @@
     "chai-http": "^2.0.1",
     "html-webpack-plugin": "^2.16.0",
     "mocha": "^2.4.5",
+    "nodemon": "^1.9.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }

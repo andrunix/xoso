@@ -1,0 +1,19 @@
+{% extends "application.njk" %}
+
+{% block left %}
+  Enjoy!
+{% endblock %}
+
+{% block right %}
+  <h1>Projects</h1>
+
+  <ul>
+    {% for proj in projects %}
+    <li>{{ proj.name }} - {{ proj.description }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+  <pre>
+  {{ projects }}
+  </pre>

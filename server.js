@@ -1,11 +1,13 @@
 'use strict';
 const dotenv = require('dotenv');
+dotenv.load();
+
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 const NunjucksHapi = require('nunjucks-hapi');
 const Path = require('path');
 
-dotenv.load();
+const Project = require('./db/project');
 
 server.connection({ port: 8000 });
 
@@ -27,6 +29,17 @@ const contactHandler = function(request, reply) {
   });
 };
 
+const projectsIndex = function(request, reply) {
+  Project.fetchAll().then(function(projects) {
+    reply.view('projects', { projects: projects.toJSON() });
+  })
+  .catch(function(error) {
+    console.log(error);
+    reply(error);
+  });
+};
+
+
 server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
 
@@ -39,6 +52,7 @@ server.register([require('inert'), require('vision')], (err) => {
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
   server.route({ method: 'GET', path: '/contact', handler: contactHandler });
 	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } });
+  server.route({ method: 'GET', path: '/projects', handler: projectsIndex });
 
 });
 
