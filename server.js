@@ -24,7 +24,7 @@ const aboutHandler = function (request, reply) {
 };
 
 const contactIndex = function(request, reply) {
-  reply.view('contact', {
+  reply.view('contact/contact', {
     title: 'Contact',
     message: 'Welcome to the contact page'
   });
@@ -45,14 +45,14 @@ const contactPost = function(request, reply) {
     if(error) return console.log(error);
   });
 
-  reply.view('contact-post', {
+  reply.view('contact/contact-post', {
     params: request.payload
   })
 };
 
 const projectsIndex = function(request, reply) {
   Project.fetchAll().then(function(projects) {
-    reply.view('projects', { projects: projects.toJSON() });
+    reply.view('projects/index', { projects: projects.toJSON() });
   })
   .catch(function(error) {
     console.log(error);
@@ -64,8 +64,7 @@ const projectShow = function(request, reply) {
 	new Project({'id' : request.params.id})
 		.fetch()
 			.then(function(project) {
-				console.log('found project ', project);
-				reply.view('project', { project: project.toJSON() });
+				reply.view('projects/show', { project: project.toJSON() });
 			})
 			.catch(function(error) {
 				console.log('Uh oh. Error' + error);
