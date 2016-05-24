@@ -8,7 +8,7 @@ const NunjucksHapi = require('nunjucks-hapi');
 const Path = require('path');
 const nodemailer = require('nodemailer');
 const smtpConfig = require('./smtpconfig');
-const Project = require('./db/project');
+const Project = require('./models/project');
 
 server.connection({ port: 8000 });
 
