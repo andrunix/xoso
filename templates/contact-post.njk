@@ -1,0 +1,15 @@
+{% extends "application.njk" %}
+
+{% block left %}
+  Enjoy!
+{% endblock %}
+
+{% block right %}
+  <h1>Thanks!</h1>
+  <h2>Your message has been sent</h2>
+
+  <strong>Message:</strong><br/>
+  <p>{{ params.message }} </p>
+  <a href="/">Back to xoso</a>
+{% endblock %}
+

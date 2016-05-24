@@ -21,6 +21,7 @@
     "items": "^2.0.0",
     "knex": "^0.10.0",
     "mysql": "^2.10.2",
+    "nodemailer": "^2.4.1",
     "nunjucks": "^2.4.2",
     "nunjucks-hapi": "^2.1.0",
     "pg": "^4.5.5",
