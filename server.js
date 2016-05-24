@@ -23,7 +23,7 @@ const aboutHandler = function (request, reply) {
 	reply.view('about', { title: 'About' });
 };
 
-const contactHandler = function(request, reply) {
+const contactIndex = function(request, reply) {
   reply.view('contact', {
     title: 'Contact',
     message: 'Welcome to the contact page'
@@ -60,6 +60,20 @@ const projectsIndex = function(request, reply) {
   });
 };
 
+const projectShow = function(request, reply) {
+	new Project({'id' : request.params.id})
+		.fetch()
+			.then(function(project) {
+				console.log('found project ', project);
+				reply.view('project', { project: project.toJSON() });
+			})
+			.catch(function(error) {
+				console.log('Uh oh. Error' + error);
+			});
+
+	// TODO: add a bit of error  handling here. Boom perhaps?? :)
+};
+
 
 server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
@@ -71,11 +85,11 @@ server.register([require('inert'), require('vision')], (err) => {
 
 	server.route({ method: 'GET', path: '/',      handler: rootHandler });
 	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
-  server.route({ method: 'GET', path: '/contact', handler: contactHandler });
+  server.route({ method: 'GET', path: '/contact', handler: contactIndex });
   server.route({ method: 'POST', path: '/contact', handler: contactPost });
 	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } });
   server.route({ method: 'GET', path: '/projects', handler: projectsIndex });
-
+	server.route({ method: 'GET', path: '/project/{id}', handler: projectShow });
 });
 
 server.start((err) => {
