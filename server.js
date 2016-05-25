@@ -9,19 +9,9 @@ const Path = require('path');
 const nodemailer = require('nodemailer');
 const smtpConfig = require('./smtpconfig');
 const Project = require('./models/project');
+const routes = require('./config/routes');
 
 server.connection({ port: 8000 });
-
-const rootHandler = function(request, reply) {
-  reply.view('index', { 
-    title: 'xoso',
-    message: 'good stuff is on the way...'
-  } );
-};
-
-const aboutHandler = function (request, reply) {
-	reply.view('about', { title: 'About' });
-};
 
 const contactIndex = function(request, reply) {
   reply.view('contact/contact', {
@@ -102,16 +92,9 @@ server.register([require('inert'), require('vision')], (err) => {
     path: Path.join(__dirname, '/templates') 
 	});
 
-	server.route({ method: 'GET', path: '/',      handler: rootHandler });
-	server.route({ method: 'GET', path: '/about', handler: aboutHandler });
-  server.route({ method: 'GET', path: '/contact', handler: contactIndex });
-  server.route({ method: 'POST', path: '/contact', handler: contactPost });
-	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } });
-  server.route({ method: 'GET', path: '/projects', handler: projectsIndex });
-	server.route({ method: 'GET', path: '/project/{id}', handler: projectShow });
-  server.route({ method: 'GET', path: '/project/new', handler: projectNew });
-  server.route({ method: 'POST', path: '/project', handler: projectCreate });
+	server.route(routes);
 });
+
 
 server.start((err) => {
   if (err)
