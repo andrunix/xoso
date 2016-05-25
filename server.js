@@ -73,6 +73,26 @@ const projectShow = function(request, reply) {
 	// TODO: add a bit of error  handling here. Boom perhaps?? :)
 };
 
+const projectNew = function(request, reply) {
+  console.log('projectNew called');
+  reply.view('projects/new');
+};
+
+
+const projectCreate = function(request, reply) {
+  Project.forge({
+    name: request.payload.name,
+    description: request.payload.description
+  })
+  .save()
+  .then(function(model) {
+    reply.redirect('/projects');
+  })
+  .catch(function(err) {
+    if (err) throw err;
+  });
+};
+
 
 server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
@@ -89,6 +109,8 @@ server.register([require('inert'), require('vision')], (err) => {
 	server.route({ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } });
   server.route({ method: 'GET', path: '/projects', handler: projectsIndex });
 	server.route({ method: 'GET', path: '/project/{id}', handler: projectShow });
+  server.route({ method: 'GET', path: '/project/new', handler: projectNew });
+  server.route({ method: 'POST', path: '/project', handler: projectCreate });
 });
 
 server.start((err) => {
