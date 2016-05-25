@@ -12,7 +12,7 @@ module.exports = [
 	{ method: 'GET', path: '/project/{id}', handler: projectsController.projectShow },
   { method: 'GET', path: '/project/new', handler: projectsController.projectNew },
   { method: 'POST', path: '/project', handler: projectsController.projectCreate },
-	{ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/public' } } },
+	{ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/../public' } } },
 ];
 
 
