@@ -44,11 +44,21 @@ const projectCreate = function(request, reply) {
   });
 };
 
+const destroy = function destroy(request, reply) {
+	new Project({ id: request.params.id })
+		.destroy()
+		.then(function(model) {
+			console.log('Project deleted');
+			reply.redirect('/projects');
+		});
+};
+
 
 module.exports = {
 	projectsIndex: projectsIndex,
 	projectShow: projectShow,
 	projectNew: projectNew,
-	projectCreate: projectCreate
+	projectCreate: projectCreate,
+	destroy : destroy
 };
 

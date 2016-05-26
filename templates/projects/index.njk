@@ -8,7 +8,7 @@
   <h1>Project</h1>
   <ul>
     {% for proj in projects %}
-    <li>{{ proj.name }} - {{ proj.description }}</li>
+		<li>{{ proj.name }} - {{ proj.description }} <a href="/projects/" {{ proj.id }}" >Delete</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
