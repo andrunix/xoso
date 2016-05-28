@@ -11,6 +11,18 @@ const projectsIndex = function(request, reply) {
   });
 };
 
+const indexJson = function(request, reply) {
+  Project.fetchAll().then(function(projects) {
+    // reply.view('projects/index', { projects: projects.toJSON() });
+    reply( projects.toJSON() );
+  })
+  .catch(function(error) {
+    console.log(error);
+    reply(error);
+  });
+};
+
+
 const projectShow = function(request, reply) {
 	new Project({'id' : request.params.id})
 		.fetch()
@@ -59,6 +71,7 @@ module.exports = {
 	projectShow: projectShow,
 	projectNew: projectNew,
 	projectCreate: projectCreate,
-	destroy : destroy
+	destroy : destroy,
+	indexJson: indexJson
 };
 
