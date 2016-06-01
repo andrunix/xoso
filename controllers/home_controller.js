@@ -1,12 +1,12 @@
 module.exports = {
-	rootHandler: function(request, reply) {
+	root: function(request, reply) {
 		reply.view('index', { 
 			title: 'xoso',
 			message: 'good stuff is on the way...'
 		} );
 	},
 
-	aboutHandler: function (request, reply) {
+	about: function (request, reply) {
 		reply.view('about', { title: 'About' });
 	}
 };

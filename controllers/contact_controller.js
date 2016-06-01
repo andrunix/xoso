@@ -1,14 +1,14 @@
 const nodemailer = require('nodemailer');
 const smtpConfig = require('../config/smtpconfig');
 
-const contactIndex = function(request, reply) {
+const index = (request, reply) => {
   reply.view('contact/contact', {
     title: 'Contact',
     message: 'Welcome to the contact page'
   });
 };
 
-const contactPost = function(request, reply) {
+const post = (request, reply) => {
   var transporter = nodemailer.createTransport(smtpConfig);
    
   var mailOptions = {
@@ -29,7 +29,7 @@ const contactPost = function(request, reply) {
 };
 
 module.exports = {
-	contactIndex: contactIndex,
-	contactPost: contactPost
+	index: index,
+	post: post
 };
 

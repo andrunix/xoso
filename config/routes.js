@@ -4,14 +4,14 @@ const projectsController = require('../controllers/projects_controller');
 
 module.exports = [
 
-	{ method: 'GET', path: '/',      handler: homeController.rootHandler },
-	{ method: 'GET', path: '/about', handler: homeController.aboutHandler },
-  { method: 'GET', path: '/contact', handler: contactController.contactIndex },
-  { method: 'POST', path: '/contact', handler: contactController.contactPost },
-  { method: 'GET', path: '/projects', handler: projectsController.projectsIndex },
-	{ method: 'GET', path: '/project/{id}', handler: projectsController.projectShow },
-  { method: 'GET', path: '/project/new', handler: projectsController.projectNew },
-  { method: 'POST', path: '/project', handler: projectsController.projectCreate },
+	{ method: 'GET', path: '/',      handler: homeController.root },
+	{ method: 'GET', path: '/about', handler: homeController.about },
+  { method: 'GET', path: '/contact', handler: contactController.index },
+  { method: 'POST', path: '/contact', handler: contactController.post },
+  { method: 'GET', path: '/projects', handler: projectsController.index },
+	{ method: 'GET', path: '/project/{id}', handler: projectsController.show },
+  { method: 'GET', path: '/project/new', handler: projectsController.newobject },
+  { method: 'POST', path: '/project', handler: projectsController.create },
 	{ method: 'DELETE', path: '/project/{id}', handler: projectsController.destroy },
 	{ method: 'GET', path: '/{param*}', handler: { directory: { path: __dirname + '/../public' } } },
 	{ method: 'GET', path: '/api/projects', handler: projectsController.indexJson },

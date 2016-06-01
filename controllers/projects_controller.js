@@ -1,7 +1,7 @@
 
 const Project = require('../models/project');
 
-const projectsIndex = function(request, reply) {
+const index = function(request, reply) {
   Project.fetchAll().then(function(projects) {
     reply.view('projects/index', { projects: projects.toJSON() });
   })
@@ -23,7 +23,7 @@ const indexJson = function(request, reply) {
 };
 
 
-const projectShow = function(request, reply) {
+const show = function(request, reply) {
 	new Project({'id' : request.params.id})
 		.fetch()
 			.then(function(project) {
@@ -36,13 +36,13 @@ const projectShow = function(request, reply) {
 	// TODO: add a bit of error  handling here. Boom perhaps?? :)
 };
 
-const projectNew = function(request, reply) {
+const newobject = function(request, reply) {
   console.log('projectNew called');
   reply.view('projects/new');
 };
 
 
-const projectCreate = function(request, reply) {
+const create = function(request, reply) {
   Project.forge({
     name: request.payload.name,
     description: request.payload.description
@@ -67,10 +67,10 @@ const destroy = function destroy(request, reply) {
 
 
 module.exports = {
-	projectsIndex: projectsIndex,
-	projectShow: projectShow,
-	projectNew: projectNew,
-	projectCreate: projectCreate,
+	index: index,
+	show: show,
+	newobject: newobject,
+	create: create,
 	destroy : destroy,
 	indexJson: indexJson
 };

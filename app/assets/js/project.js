@@ -1,6 +1,6 @@
 (function() {
 	$(document.ready(function() {
-		$('#project-link').click() {
+		$('#project-link').click(function() {
 			alert('foo!');
 		});
 	});
