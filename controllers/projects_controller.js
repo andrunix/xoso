@@ -22,6 +22,17 @@ const indexJson = function(request, reply) {
   });
 };
 
+const edit = function(request, reply) {
+	new Project({'id' : request.params.id})
+		.fetch()
+			.then(function(project) {
+				reply.view('projects/edit', { project : project.toJSON() });
+			})
+			.catch(function(error) {
+				console.log('Error ' + error);
+			});
+
+};
 
 const show = function(request, reply) {
 	new Project({'id' : request.params.id})
@@ -72,6 +83,7 @@ module.exports = {
 	newobject: newobject,
 	create: create,
 	destroy : destroy,
+	edit : edit,
 	indexJson: indexJson
 };
 
