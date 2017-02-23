@@ -1,4 +1,4 @@
-{% extends "application.njk" %}
+{% extends "layout.njk" %}
 
 {% block left %}
 {% endblock %}
@@ -7,12 +7,17 @@
   <h1>Project</h1>
   <ul>
     {% for proj in projects %}
-		<li>{{ proj.name }} - {{ proj.description }} <a class="project-link" href="#" data-id="{{ proj.id }}" >Delete</a></li>
+    <li><a href="projects/edit/{{ proj.id }}">{{ proj.name }}</a> 
+      - {{ proj.description }} 
+      <a class="project-link" href="#" data-id="{{ proj.id }}" >Delete</a>
+    </li>
     {% endfor %}
   </ul>
+  <a href="projects/new">New Project</a>
 {% endblock %}
 
 {% block scripts %}
-<script src="./dist/project.js"></script>
+<script src="project.js"></script>
 {% endblock %}
+
 

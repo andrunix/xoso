@@ -31,7 +31,6 @@ const edit = function(request, reply) {
 			.catch(function(error) {
 				console.log('Error ' + error);
 			});
-
 };
 
 const show = function(request, reply) {
@@ -49,7 +48,7 @@ const show = function(request, reply) {
 
 const newobject = function(request, reply) {
   console.log('projectNew called');
-  reply.view('projects/new');
+  reply.view('projects/new', { project: {} });
 };
 
 
@@ -72,7 +71,7 @@ const destroy = function destroy(request, reply) {
 		.destroy()
 		.then(function(model) {
 			console.log('Project deleted');
-			reply.redirect('/projects');
+			reply( { message: "project deleted" }).code(200);
 		});
 };
 

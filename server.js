@@ -8,14 +8,21 @@ const NunjucksHapi = require('nunjucks-hapi');
 const Path = require('path');
 const routes = require('./config/routes');
 
-server.connection({ port: 8000 });
+server.connection({ 
+  port: 8000,
+  routes: { cors: true }
+});
 
 server.register([require('inert'), require('vision')], (err) => {
   if (err) throw err;
 
 	server.views({
-    engines: { njk: NunjucksHapi },
-    path: Path.join(__dirname, '/templates') 
+    engines: { 
+      njk: NunjucksHapi 
+    },
+    relativeTo: __dirname,
+    path: './templates',
+    layoutPath: './templates'
 	});
 
 	server.route(routes);
