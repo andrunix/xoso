@@ -32,6 +32,13 @@ npm install
 
 # Database
 
+Start mysql and issue
+
+```
+CREATE DATABASE xoso_dev;
+```
+
+
 ## Migrations
 
 Migrations are stored in db/migrations. In order to run 
