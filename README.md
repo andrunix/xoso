@@ -30,6 +30,17 @@ http://niftylettuce.com/posts/automated-node-app-ci-graceful-zerodowntime-github
 npm install
 ```
 
+### Install knex globally to be able to run database migrations:
+
+```
+npm i knex -g
+```
+
+# Environment
+
+Copy the file sample.env to .env and edit accordingly.
+
+
 # Database
 
 Start mysql and issue
