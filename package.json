@@ -19,6 +19,7 @@
     "dotenv": "^2.0.0",
     "exports-loader": "^0.6.3",
     "hapi": "^13.0.0",
+    "hapi-auth-cookie": "^6.1.1",
     "hoek": "^4.0.0",
     "inert": "^3.2.0",
     "items": "^2.0.0",
