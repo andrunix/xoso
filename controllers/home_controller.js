@@ -37,8 +37,8 @@ module.exports = {
         return reply.redirect('/');
     }
 
-    let message = '';
-    let account = null;
+    var message = '';
+    var account = null;
 
     if (request.method === 'post') {
 
