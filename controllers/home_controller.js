@@ -1,6 +1,6 @@
 
 
-let uuid = 1;       // Use seq instead of proper unique identifiers for demo only
+var uuid = 1;       // Use seq instead of proper unique identifiers for demo only
 
 const users = {
     john: {
@@ -37,8 +37,8 @@ module.exports = {
         return reply.redirect('/');
     }
 
-    let message = '';
-    let account = null;
+    var message = '';
+    var account = null;
 
     if (request.method === 'post') {
 
