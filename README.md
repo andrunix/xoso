@@ -10,7 +10,7 @@
 * ~~postgresql: http://www.postgresql.org/~~
 * mysql
 * toastr: https://github.com/CodeSeven/toastr
-
+* redis: 
 
 # Deployment
 
