@@ -4,7 +4,7 @@ const projectsController = require('../controllers/projects_controller');
 
 module.exports = [
 
-	{ method: 'GET', path: '/',      handler: homeController.root },
+	{ method: 'GET', path: '/', config: { auth: false, handler: homeController.root } },
 	{ method: 'GET', path: '/about', config: { auth: false, handler: homeController.about } },
   { method: 'GET', path: '/contact', config: { auth: false, handler: contactController.index } },
   { method: 'POST', path: '/contact', handler: contactController.post },

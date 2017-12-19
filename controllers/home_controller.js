@@ -19,11 +19,15 @@ const users = {
 
 module.exports = {
 	root: function(request, reply) {
-		reply.view('index', { 
-			title: 'xoso',
-			message: 'good stuff is on the way...',
-      userName: request.auth.credentials.name
-		} );
+    if (request.auth && request.auth.credentials) {
+		  reply.view('index', { 
+			  title: 'xoso',
+			  message: 'good stuff is on the way...' 
+        // userName: request.auth.credentials.name || ''
+		  } );
+    } else {
+      reply.view('anon');
+    }
 	},
 
 	about: function (request, reply) {
